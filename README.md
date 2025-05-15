@@ -1,38 +1,89 @@
-# ManasVerse - Django eCommerce Project
+# 🛒 ManasVerse – Django eCommerce Project
 
-ManasVerse is a fully functional eCommerce web application built with **Django** and **Bootstrap**. It features a clean UI, dynamic product listings, shopping cart, user login/signup, and more.
+A responsive, dynamic Django-based eCommerce platform built from scratch.  
+Built by **Manas Srivastava** 💻✨
 
 ---
 
 ## 🚀 Features
 
-- ✅ Home page with responsive carousel
-- ✅ Product listing with filters, search, and sort
-- ✅ Product detail page
-- ✅ Add to cart (session-based, no login required)
-- ✅ Cart management (increase, decrease, remove)
-- ✅ User login & signup
-- ✅ Admin panel (Django default)
-- ✅ Clean and responsive UI using Bootstrap + Custom CSS
+### ✅ Core Features (Completed)
+- Full Django backend with session-based cart
+- Product listing, filtering, sorting, and search
+- Product detail view with "Add to Cart"
+- Cart view with quantity, total, and remove options
+- Checkout page & order summary ✅
+- Email confirmation after successful order ✉️
+- User login and signup functionality 🔐
+- Bootstrap-powered responsive UI
+- Home page carousel with "Shop Now" CTA
+- Admin panel to manage products
+
+
 
 ---
 
-## 🧰 Tech Stack
+## 🖼️ Screenshots
 
-- Backend: Django (Python)
-- Frontend: HTML, CSS, Bootstrap
-- Database: SQLite (default Django DB)
-- Version Control: Git & GitHub
+### 🏠 Home1 Page  
+![Home](screenshots/home.PNG)
+
+### 🛍️ Home2 Page  
+![Products](screenshots/home2.PNG)
+
+### 🛒 Cart Page  
+![Cart](screenshots/cart.PNG)
+
+### 🔐 Login Page  
+![Login](screenshots/login.PNG)
+
+### 🛒 Product_detail Page  
+![Cart](screenshots/product_detail.PNG)
+
+### 🔐 Checkout Page  
+![Login](screenshots/Checkout.PNG)
+
+### 🛒 Payment Page  
+![Cart](screenshots/payment.PNG)
+
+### 🔐 Product Page  
+![Login](screenshots/product.PNG)
 
 ---
 
-## 💻 How to Run Locally
+## ⚙️ Tech Stack
 
-```bash
-git clone https://github.com/manas-onGit/ManasVerse.git
-cd ManasVerse
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
+- Python 3.x
+- Django 4.x
+- HTML5, CSS3, Bootstrap
+- SQLite (default) – swappable with PostgreSQL
+- Git + GitHub
+
+---
+
+## 📁 Folder Structure
+Ecommerce/
+├── ManasVerse/ # Main Django app
+├── static/ # CSS, JS, Images
+├── templates/ # HTML templates
+├── screenshots/ # UI screenshots
+├── db.sqlite3 # SQLite database
+├── manage.py # Django CLI
+└── README.md # You're here!
+
+
+
+---
+
+## 👨‍💻 Developed By
+
+**Manas Srivastava**  
+📧 Email: [manasworks04@gmail.com](mailto:manasworks04@gmail.com)  
+🌐 GitHub: [manas-onGit](https://github.com/manas-onGit)
+
+---
+
+## 📌 License
+
+This project is licensed for learning and portfolio purposes. Contact me for commercial use.
+
