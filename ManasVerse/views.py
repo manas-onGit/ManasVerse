@@ -15,7 +15,7 @@ import logging
 # For logging
 logger = logging.getLogger(__name__)
 
-# ✅ Updated Fast2SMS API Integration
+# Updated Fast2SMS API Integration
 def send_sms(phone, message):
     url = "https://www.fast2sms.com/dev/bulkV2"
     payload = {
@@ -189,7 +189,7 @@ def checkout_view(request):
             # Clear cart
             request.session['cart'] = {}
 
-            # ✅ Send Email
+            # Send Email
             try:
                 subject = 'Your Order Confirmation'
                 message = f'Thank you {name} for your order!\n\nOrder ID: {order.id}\nTotal: ₹{order.total_amount}\n\nWe will deliver it to:\n{address}'
@@ -200,7 +200,7 @@ def checkout_view(request):
             except Exception as e:
                 logger.error(f"Email send failed: {e}")
 
-            # ✅ Send SMS
+            # Send SMS
             try:
                 sms_message = f'Hi {name}, your order #{order.id} of ₹{order.total_amount} has been placed. Thank you!'
                 send_sms(phone, sms_message)
