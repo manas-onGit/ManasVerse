@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="slider-wrapper">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="overlay"></div>
+                <img src="{% static 'images/slide1.jpg' %}" class="d-block w-100 slider-img" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <div class="overlay"></div>
+                <img src="{% static 'images/slide2.jpg' %}" class="d-block w-100 slider-img" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <div class="overlay"></div>
+                <img src="{% static 'images/slide3.jpg' %}" class="d-block w-100 slider-img" alt="Slide 3">
+            </div>
+        </div>
+
+        <!-- Centered Caption -->
+        <div class="carousel-caption-center">
+            <h2>Welcome to ManasVerse</h2>
+            <a href="{% url 'product_list' %}" class="btn btn-primary">Shop Now</a>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .slider-wrapper {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .slider-img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-caption-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+    }
+
+    .carousel-caption-center h2 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .carousel-caption-center .btn {
+        padding: 1rem 2rem;
+        font-size: 1.25rem;
+        background-color: #ff6347; /* Custom color */
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: black; /* Ensuring contrast with images */
+    }
+</style>
+{% endblock %}

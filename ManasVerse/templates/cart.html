@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4">Your Shopping Cart</h2>
+
+    <!-- ✅ Message Alerts -->
+    {% if messages %}
+        <div class="container mt-2">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if cart_items %}
+    <table class="table table-bordered text-center align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <!-- Accessing product name and price correctly -->
+                <td>{{ item.product.name }}</td>
+                <td>₹{{ item.product.price }}</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <!-- Decrease Quantity Form -->
+                        <form action="{% url 'decrease_quantity' item.product.id %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button class="btn btn-sm btn-outline-secondary">-</button>
+                        </form>
+
+                        <span class="mx-2">{{ item.quantity }}</span>
+
+                        <!-- Increase Quantity Form -->
+                        <form action="{% url 'increase_quantity' item.product.id %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button class="btn btn-sm btn-outline-secondary">+</button>
+                        </form>
+                    </div>
+                </td>
+                <td>₹{{ item.total }}</td>
+                <td>
+                    <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remove</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h4 class="text-end">Grand Total: ₹{{ total_amount }}</h4>
+
+    <!-- Continue Shopping and Checkout Buttons -->
+    <div class="d-flex justify-content-between">
+        <a href="{% url 'product_list' %}" class="btn btn-secondary">Continue Shopping</a>
+        <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a>
+    </div>
+    
+    {% else %}
+    <div class="alert alert-info text-center">
+        Your cart is empty.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

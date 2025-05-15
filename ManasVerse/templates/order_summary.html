@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Order Confirmation</h2>
+    <p class="lead">Your order has been successfully placed!</p>
+
+    <h4>Order ID: #{{ order.id }}</h4>
+    <p>Total Amount: ₹{{ total }}</p>
+
+    <h5>Order Details:</h5>
+    <ul class="list-group">
+        {% for item in items %}
+            <li class="list-group-item">
+                <strong>{{ item.product.name }}</strong> - Quantity: {{ item.quantity }} - ₹{{ item.total_price }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="mt-4">
+        <a href="{% url 'dummy_payment' order_id=order.id %}" class="btn btn-primary">Proceed to Payment</a>
+        <a href="{% url 'home' %}" class="btn btn-secondary ms-2">Return to Home</a>
+    </div>
+</div>
+{% endblock %}

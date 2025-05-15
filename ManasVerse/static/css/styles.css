@@ -1,0 +1,277 @@
+/* General Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🌟 Modern & Clean Navbar */
+.navbar {
+    background: rgba(13, 110, 253, 0.8); /* slightly transparent default */
+    padding: 18px 40px;
+    box-shadow: none;
+    border-bottom: 2px solid #0845c1; /* darker blue border */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(90deg, #0d6efd 0%, #0845c1 100%); /* gradient fallback */
+}
+
+.navbar.scrolled {
+    background: #0d6efd; /* solid blue on scroll */
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
+}
+
+/* Navbar Brand (Logo + Text) */
+.navbar-brand {
+    font-size: 2.4rem; /* bigger font size */
+    font-weight: bold;
+    color: white !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 50px;  /* bigger logo */
+    width: 50px;
+    margin-right: 12px;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 0 8px 2px rgba(255, 193, 7, 0.7);
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    box-shadow: 0 0 12px 4px rgba(255, 193, 7, 1);
+}
+
+/* Center Tagline Styling */
+.navbar-center-tagline {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #ffc107; /* Bootstrap warning yellow */
+    font-style: italic;
+    user-select: none;
+    letter-spacing: 1.3px;
+    white-space: nowrap;
+    text-shadow: 0 0 6px rgba(255, 193, 7, 0.8);
+}
+
+/* Nav links with underline hover */
+.navbar-nav {
+    gap: 20px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    overflow: hidden;
+    font-size: 1.15rem;
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: 6px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffc107;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important; /* warning yellow */
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Icon scale effect if you have icons in links */
+.navbar-nav .nav-link svg {
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover svg {
+    transform: scale(1.1);
+    fill: #ffc107;
+}
+
+/* Logout button inside navbar */
+.nav-item form {
+    display: flex;
+    align-items: center;
+    height: 38px; /* match nav links height */
+    margin: 0;
+}
+
+.logout-btn {
+    margin: 0;
+    padding: 8px 14px;
+    font-size: 1.15rem;
+    color: white !important;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1;
+    height: 100%;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffc107 !important;
+}
+
+/* Slider */
+.slider-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.slider-img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+/* Overlay to darken background for text visibility */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Caption text centered on slider */
+.carousel-caption-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Product Cards */
+.card {
+    margin-bottom: 30px;
+    transition: transform 0.2s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Cart Page */
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-total {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    margin-top: 0;
+    background-color: #212529;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0845c1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slider-img {
+        height: 250px;
+    }
+
+    .carousel-caption-center h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Navbar adjustments for smaller screens */
+    .navbar {
+        padding: 18px 20px;
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    }
+
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+
+    .navbar-brand img {
+        height: 40px;
+        width: 40px;
+        box-shadow: 0 0 6px 1.5px rgba(255, 193, 7, 0.6);
+    }
+
+    .navbar-nav {
+        gap: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+
+    .nav-item form {
+        height: 34px;
+    }
+
+    .logout-btn {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+
+    /* Hide tagline on smaller screens */
+    .navbar-center-tagline {
+        display: none !important;
+    }
+}
+
+/* Center Tagline Styling */
+.navbar-center-tagline {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #ffc107; /* Bootstrap warning yellow */
+    font-style: italic;
+    user-select: none;
+    letter-spacing: 1.3px;
+    white-space: nowrap;
+    text-shadow: 0 0 6px rgba(255, 193, 7, 0.8);
+}

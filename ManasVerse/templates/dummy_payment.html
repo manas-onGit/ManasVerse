@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3>Payment Page</h3>
+    <h4>Order ID: #{{ order_id }}</h4>
+    <p>Total Amount: ₹{{ total }}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <!-- Other payment details can be shown here -->
+        
+        <!-- Pay Now Button -->
+        <button type="submit" class="btn btn-success">Pay Now</button>
+    </form>
+</div>
+{% endblock %}
