@@ -1,6 +1,5 @@
-# 🛒 ManasVerse – Django eCommerce Project
-
-A responsive, dynamic Django-based eCommerce platform built from scratch by **Manas Srivastava** .
+🛒 ManasVerse – Django eCommerce Project
+A responsive and dynamic eCommerce platform built from scratch with Django by Manas Srivastava.
 
 ---
 
