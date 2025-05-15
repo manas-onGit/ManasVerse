@@ -22,33 +22,32 @@ A responsive, dynamic Django-based eCommerce platform built from scratch by **Ma
 
 ---
 
-## 🖼️ Screenshots
+## 🖼️ UI Screenshots
 
-### 🏠 Home1 Page  
-![Home](screenshots/home.PNG)
+### 🔹 Home Page (Slider)
+![Home1](Ecommerce/screenshots/home1.png)
 
-### 🛍️ Home2 Page  
-![Products](screenshots/home2.PNG)
+### 🔹 Home Page (With Products)
+![Home2](Ecommerce/screenshots/home2.png)
 
-### 🛒 Cart Page  
-![Cart](screenshots/cart.PNG)
+### 🔹 Product Page
+![Product](Ecommerce/screenshots/product.png)
 
-### 🔐 Login Page  
-![Login](screenshots/login.PNG)
+### 🔹 Product Detail Page
+![Product Detail](Ecommerce/screenshots/product_detail.png)
 
-### 🛒 Product_detail Page  
-![Cart](screenshots/product_detail.PNG)
+### 🔹 Cart Page
+![Cart](Ecommerce/screenshots/Cart.png)
 
-### 🔐 Checkout Page  
-![Login](screenshots/Checkout.PNG)
+### 🔹 Checkout Page
+![Checkout](Ecommerce/screenshots/Checkout.png)
 
-### 🛒 Payment Page  
-![Cart](screenshots/payment.PNG)
+### 🔹 Payment Confirmation
+![Payment](Ecommerce/screenshots/payment.png)
 
-### 🔐 Product Page  
-![Login](screenshots/product.PNG)
+### 🔹 Login Page
+![Login](Ecommerce/screenshots/login.png)
 
----
 
 ## ⚙️ Tech Stack
 
