@@ -16,7 +16,7 @@ media/product_images/
 media/products/
 
 # Static files (you can choose to ignore or not)
-staticfiles/
+#staticfiles/
 
 # Environment variables file
 .env
