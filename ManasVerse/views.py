@@ -9,34 +9,10 @@ from decimal import Decimal
 from .models import Product, Category, Order, OrderItem
 from django.core.validators import RegexValidator
 from django import forms
-import requests
 import logging
 
 # For logging
 logger = logging.getLogger(__name__)
-
-# Updated Fast2SMS API Integration
-def send_sms(phone, message):
-    url = "https://www.fast2sms.com/dev/bulkV2"
-    payload = {
-        'authorization': settings.FAST2SMS_API_KEY,
-        'sender_id': 'TXTIND',
-        'message': message,
-        'language': 'english',
-        'route': 'v3',
-        'numbers': phone
-    }
-    headers = {
-        'cache-control': "no-cache"
-    }
-    try:
-        response = requests.post(url, data=payload, headers=headers)
-        print("SMS response:", response.json())  # For debugging
-        response.raise_for_status()
-        return True
-    except requests.exceptions.RequestException as e:
-        logger.error(f"SMS send failed: {e}")
-        return False
 
 def home(request):
     return render(request, 'home.html')
@@ -199,13 +175,6 @@ def checkout_view(request):
                 send_mail(subject, message, from_email, recipient_list)
             except Exception as e:
                 logger.error(f"Email send failed: {e}")
-
-            # Send SMS
-            try:
-                sms_message = f'Hi {name}, your order #{order.id} of ₹{order.total_amount} has been placed. Thank you!'
-                send_sms(phone, sms_message)
-            except Exception as e:
-                logger.error(f"SMS send failed: {e}")
 
             return redirect('order_summary', order_id=order.id)
 

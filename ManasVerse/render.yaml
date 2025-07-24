@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: manasverse
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn Ecommerce.wsgi"
+    autoDeploy: true
+    envVars:
+      - key: SECRET_KEY
+        value: django-insecure-k)dwl!2e*3h9vrj2rxc=7+-dac5z75%4+zwvz@d1)i4-1((3i4
+      - key: EMAIL_HOST_USER
+        value: manasworks04@gmail.com
+      - key: EMAIL_HOST_PASSWORD
+        value: rctpsmevuogldycu
