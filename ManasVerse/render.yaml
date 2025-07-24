@@ -2,8 +2,11 @@ services:
   - type: web
     name: manasverse
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn Ecommerce.wsgi"
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn Ecommerce.wsgi
     autoDeploy: true
     envVars:
       - key: SECRET_KEY
@@ -12,3 +15,5 @@ services:
         value: manasworks04@gmail.com
       - key: EMAIL_HOST_PASSWORD
         value: rctpsmevuogldycu
+      - key: DJANGO_SETTINGS_MODULE
+        value: Ecommerce.settings
